@@ -18,13 +18,13 @@ if (isset($_POST['submit'])) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'corrierepvtltd@gmail.com';
-        $mail->Password = 'xlbmvfymihtxuvpd';
+        $mail->Username = 'your email here';
+        $mail->Password = 'your password here';
         $mail->SMTPSecure = "tls";
         $mail->Port = '587';
 
-        $mail->setFrom('corrierepvtltd@gmail.com');
-        $mail->addAddress('corrierepvtltd@gmail.com');
+        $mail->setFrom('your email here');
+        $mail->addAddress('your email here');
 
         $mail->isHTML(true);
         $mail->Subject = 'Message received from Contact:' . $name;
