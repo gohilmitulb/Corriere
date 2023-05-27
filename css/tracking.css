@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #CCD6DD;
+    background-image: url('wings full.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: grid;
+}
+a:link {
+    text-decoration: none;
+}  
+a:visited {
+    color: #252525;
+    background-color: transparent;
+}
+/* .login {
+    position: absolute;
+    padding: 15px;
+    margin-left: 88%;
+    margin-top: 15px;
+    font-size: x-large;
+    letter-spacing: 6px;
+    border: 2px solid #252525;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+}
+.login:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-shadow: 0 0 10px #55ACEE;
+}
+.logo {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.bar {
+    display: flex;
+    justify-content: center;
+}
+.menu {
+    margin-top: 15px;
+    margin-left: 9%;
+    list-style: none;
+    display: flex;
+   
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 100px;
+    letter-spacing: 6px;
+}
+.menu .m {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+.m::after {
+    content: "";
+    position: absolute;
+    width: 95%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #55ACEE;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+.m:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+} */
+.down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+    width: 100%;
+    min-height: 90vh;
+}
+.container{
+    width: 1100px;
+    max-width: 100%;
+    padding: 40px;
+    margin: 0 30px;
+    background-color: #292f33;
+    position: relative;
+    box-shadow: 0 5px 10px #55acee;
+}
+
+.details{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.order h1{
+    text-transform: uppercase;
+    color: #ffff;
+}
+
+.order span{
+    color: #55acee;
+
+}
+
+.date p{
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.track{
+    margin: 4em 0 8em;
+    margin-left: 5rem;
+}
+
+#progress{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+#progress li{
+    width: 20%;
+    position: relative;
+}
+
+#progress li::before{
+    content: '\2713';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    align-items: center;
+    font-size: 2rem;
+    height: 50px;
+    background-color: #55acee;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 11111;
+}
+
+#progress li:last-child::before{
+    content: '\2713';
+    font-weight: bold;
+    background-color: #c5cae9;
+}
+
+#progress::before{
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 60%;
+    margin-left: 35px;
+    height: 10px;
+    background-color: #55acee;
+    z-index: 111;
+}
+
+#progress::after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 80%;
+    background: #c5cae9;
+    height: 10px;
+}
+
+.lists{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    gap: 1em;
+    flex: 1 1 50px;
+}
+
+.list p{
+    font-size: 1rem;
+    color: #ffff;
+}
+
+.list img{
+    width: 50px;
+}
+/* footer {
+    font-weight: 400;
+    padding: 20px 0 0 5px;
+    margin-top: 7rem;
+    display: flex;
+}
+.foot .social {
+    text-align: center;
+    padding-bottom: 10px;
+    color: #252525;
+    margin-left: 63%;
+}
+.foot .social a{
+    font-size: 25px;
+    color: inherit;
+    height: 10px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 28px 0 0;
+    opacity: 75%;
+}
+.foot .social a:hover {
+    opacity: 95%;
+    text-shadow: 0 0 10px #55ACEE;
+} */
+/* .foot .nav {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.foot .nav li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 80%;
+}
+.foot .nav li {
+    display: inline-block;
+    padding: 0 20px;
+}
+.foot .nav li:hover {
+    opacity: 100%;
+    text-shadow: 0 0 10px #55ACEE;
+} */
+/* .foot .copyright {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #252525;
+} */

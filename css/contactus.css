@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact_heading{
+    text-align: center;
+    font-size: 2rem;
+    color: #55ACEE;
+    margin-top: 5rem;
+}
+
+.contact_container{
+    margin-top: 3rem;
+    display: flex;
+    /* flex-flow: row wrap; */
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;    
+    gap: 20rem; 
+    padding-bottom: 11rem;
+}
+
+.alert-success{
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    background-color: palegreen;
+    color: #252525;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 20px 40px;
+    width: 100%;
+    border-left: 8px solid #55ACEE;
+    border-radius: 4px;
+}
+
+.alert-error{
+    margin-top: -1.5rem;
+    z-index: 1;
+    background-color: palevioletred;
+    color: #252525;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 20px 40px;
+    width: 100%;
+    border-left: 8px solid #55ACEE;
+    border-radius: 4px;
+}
+
+.contact_form {
+    background-color: #CCD6DD;
+    width: 400px;
+    padding: 40px;
+    box-shadow: 0 5px 10px #55ACEE;
+    border-radius: 10px;
+}
+body.dark .contact_form{
+    background-color: #292F33;
+}
+.contact_form h1{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #55ACEE;
+    text-align: center;
+}
+.contact_form .box input{
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #252525;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #55ACEE;
+    outline: none;
+    background: transparent;
+}
+body.dark .contact_form .box input{
+    color: #CCD6DD;
+}
+.contact_form .box label{
+    position: relative;
+    left: 0;
+    top: -55px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #252525;
+    pointer-events: none;
+    transition: 0.8s;
+}
+body.dark .contact_form .box label{
+    color:#CCD6DD;
+}
+.contact_form .box input:focus~label,
+.contact_form .box input:valid~label {
+    top: -85px;
+    left: 0;
+    color: #55ACEE;
+    font-size: 16px;
+}
+#contact_submit {
+    padding: 10px 20px;
+    color: #252525;
+    background-color: #CCD6DD;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    border: 1px solid #55ACEE;
+    margin: auto;
+    cursor: pointer;
+}
+body.dark #contact_submit{
+    background-color: #292F33;
+    color: #CCD6DD;
+}
+#contact_submit:hover {
+    background-color: #55ACEE;
+    color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.contact_button {
+    display: flex;
+    flex-direction: row;
+    margin-top: -1.5rem;
+}
+
+a {
+    color: #55ACEE;
+    text-decoration: none;
+}
+
+/* .reachus{
+    display: flex;
+    flex-direction: column;
+} */
+
+.reachus .section{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.reachus .section .icon{
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px; 
+}
+
+.reachus .section .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #252525;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.reachus .section .text h3 a{
+    font-weight: 500;
+    color: #55acee;
+    font-size: x-large;
+}
+
+.reachus .section .text h3{
+    color: #55ACEE;
+    font-size: 1.5rem;
+}
+
+body.dark .reachus .section .text h1{
+    color: #CCD6DD;
+}
+
+.section .icon #map{
+    width: 4rem;
+}
+
+.section .icon #timings{
+    width: 5rem;
+}
+
+.section .icon #emailus{
+    width: 5rem;
+}
+
+
+
+@media (max-width: 77em){
+    .contact_container{
+        gap: 3rem;
+        flex-direction: column;
+    }
+    .contact_heading{
+        font-size: 1.7rem;
+        margin-top: 3rem;
+    }
+}
+@media (max-width: 50em){
+    .contact_heading{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        width: 25rem;
+        text-align: center;
+    }
+    .contact_form{
+        width: 330px;
+        padding: 25px;
+    }
+    .section .icon #map{
+        width: 3rem;
+    }
+    .section .icon #timings{
+        width: 4rem;
+    }
+    .section .icon #emailus{
+        width: 4rem;
+    }
+    .reachus .section .text h1{
+        font-size: 1.5rem;
+    }
+    .reachus .section .text h3{
+        font-size: large;
+    }
+}
+@media (max-width: 45em){
+    .contact_heading{
+        font-size: 0.9rem;
+    }
+}

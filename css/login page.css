@@ -1,0 +1,96 @@
+body {
+    background-color:#CCD6DD;
+    font-family: 'Nunito Sans' , sans-serif;
+    /* background-image: url('wings full.png');
+    background-repeat: no-repeat;
+    background-size: 100%; */
+    /* display: grid; */
+}
+.login {
+    background-color: #CCD6DD;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50% ,-50%);
+    box-shadow: 0 5px 10px #55ACEE;
+    border-radius: 10px;
+}
+.login h1{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #55ACEE;
+    text-align: center;
+}
+.login .box {
+    padding: 0.5rem;
+}
+.login .box input{
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #252525;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #55ACEE;
+    outline: none;
+    background: transparent;
+}
+.login .box label{
+    position: relative;
+    left: 0;
+    top: -55px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #252525;
+    pointer-events: none;
+    transition: 0.8s;
+}
+.login .box input:focus~label,
+.login .box input:valid~label {
+    top: -85px;
+    left: 0;
+    color: #55ACEE;
+    font-size: 16px;
+}
+#submit {
+    padding: 10px 20px;
+        color: #252525;
+        background-color: #CCD6DD;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        border: 1px solid #55ACEE;
+}
+#submit:hover {
+    background-color: #55ACEE;
+    color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.button {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+}
+#register {
+    font-size: 15px;
+    text-decoration: none;
+    color: #252525;
+
+}
+#register a {
+    margin: auto;
+    color: #55ACEE;
+    text-decoration: none;
+}
+a {
+    transition: 3s;
+}

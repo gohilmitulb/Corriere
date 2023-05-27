@@ -1,0 +1,93 @@
+body {
+    background-color: #CCD6DD;
+    font-family: 'Nunito Sans' , sans-serif;
+    /* background-image: url('wings full.png');
+    background-repeat: no-repeat;
+    background-size: 100%; */
+}
+.register {
+    background-color: #CCD6DD;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 35px;
+    transform: translate(-50% ,-50%);
+    box-shadow: 0 5px 10px #55ACEE;
+    border-radius: 10px;
+}
+.register h1{
+    margin: 0 0 30px;
+    margin-bottom: 55px;
+    padding: 0;
+    color: #55ACEE;
+    text-align: center;
+}
+.register .box input{
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    color: #252525;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #55ACEE;
+    outline: none;
+    background: transparent;
+}
+.register .box label{
+    position: relative;
+    left: 0;
+    top: -55px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #252525;
+    pointer-events: none;
+    transition: 0.8s;
+}
+.register .box input:focus~label,
+.register .box input:valid~label {
+    top: -85px;
+    left: 0;
+    color: #55ACEE;
+    font-size: 16px;
+}
+.button {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+#submit {
+    padding: 10px 20px;
+        color: #55ACEE;
+        background-color: #CCD6DD;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        border: 1px solid #55ACEE;
+}
+#submit:hover {
+    background-color: #55ACEE;
+    color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#login {
+    font-size: 14px;
+        text-decoration: none;
+        color: #252525;
+}
+#login a {
+    margin: auto;
+        color: #55ACEE;
+        text-decoration: none;
+    
+}
+a {
+    transition: 3s;
+}

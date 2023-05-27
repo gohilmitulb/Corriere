@@ -1,0 +1,49 @@
+<footer class="foot">
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="copyright">
+        <p>&copy;2022 Corriere. Online courier service Gandhinagar. All rights reserved</p>
+    </div>
+</footer>
+<style>
+footer {
+    text-align: center;
+}
+.foot .social a{
+    padding: 0.5rem;
+    font-size: 1.2rem; 
+    color: #252525;     
+}
+.foot .social a:hover{
+    color: #55acee;
+    transition: none;
+}
+.foot .social a:focus{
+    color: #55acee;
+    transition: none;
+    outline: none;
+}
+body.dark .foot .social a{
+    color: #CCD6DD;
+}
+.foot .copyright{
+    font-size: 1rem;
+    color: #252525;
+    text-transform: uppercase;
+}
+body.dark .foot .copyright{
+    color: #CCD6DD;
+}
+@media (max-width: 100em){
+    .foot .copyright{
+        font-size: 0.7rem;
+    }
+    .foot{
+        bottom: 0.3rem; 
+    }
+}
+</style>

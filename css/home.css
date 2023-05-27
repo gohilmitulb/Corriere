@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    background-color: #CCD6DD;
+    color: #252525;
+    transition: background 0.1s linear;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+body.dark {
+    background-color: #252525;
+    color: #CCD6DD;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #252525;
+    background-color: transparent;
+}
+
+body.dark .header{
+    background-color: #252525;
+}
+
+.container{
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow:hidden;
+    background-color: #CCD6DD;
+}
+
+body.dark .container{
+    background-color: #252525;
+}
+
+h2 {
+    color: #252525;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+}
+
+body.dark h2 {
+    color: #CCD6DD;
+}
+
+h2 .name{
+    color: #55ACEE;
+    cursor: pointer;
+}
+
+h2 .name:focus{
+    padding: 0.3rem;
+    outline: solid #55ACEE;
+    transition: none;
+}
+
+.pickup {
+    padding: 1rem;
+    font-size: x-large;
+    letter-spacing: 6px;
+    border: 2px solid #252525;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: 1.5s;
+    color: #252525;
+    text-align: center;
+}
+
+.right-content a {
+    width: 25rem;
+}
+
+body.dark .pickup {
+    border-color: #CCD6DD;
+    color: #CCD6DD;
+}
+
+.pickup:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-shadow: 0 0 10px #55ACEE;
+}
+
+.pickup_nav:focus {
+    outline: none;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-shadow: 0 0 10px #55ACEE;
+    border-radius: 2rem;
+    transition: none;
+}
+
+#main {
+    width: 55rem;
+}
+
+.image {
+    width: 55rem;
+    animation-name: homeimg;
+    animation-duration: 2s;
+}
+
+@keyframes homeimg {
+    from {
+        width: 10rem;
+        opacity: 0;
+    }
+
+    to {
+        width: 55rem;
+        opacity: 1;
+    }
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.desc h1 {
+    color: #55ACEE;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.desc h3 {
+    font-size: 25px;
+    color: #55ACEE;
+    width: 70vh;
+    text-align: center;
+}
+
+@media (max-width: 110em) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+    }
+
+    h2 {
+        margin-top: 1.5rem;
+    }
+
+    .right-content {
+        gap: 2rem;
+    }
+
+    .image {
+        padding: 0;
+    }
+
+    .container {
+        padding: 3rem;
+    }
+
+}
+
+@media (max-width: 60em) {
+    .image {
+        width: 35rem;
+    }
+
+    #main {
+        width: 35rem;
+    }
+
+    .desc h1 {
+        font-size: 30px;
+    }
+
+    .desc h3 {
+        font-size: 20px;
+    }
+
+    .pickup {
+        font-size: 1.1rem;
+        letter-spacing: 5px;
+    }
+
+    .right-content a {
+        width: 20rem;
+    }
+
+    .container {
+        padding: 3.5rem;
+    }
+}
+
+@media (max-width: 50em) {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .desc h1 {
+        width: 45rem;
+    }
+}
+
+@media (max-width: 42em) {
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .desc h1 {
+        font-size: 25px;
+        width: 38rem;
+    }
+
+    .desc h3 {
+        font-size: 15px;
+    }
+
+    .pickup {
+        font-size: 0.9rem;
+        letter-spacing: 5px;
+        font-weight: 700;
+    }
+
+    .right-content a {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 35em) {
+    .image {
+        width: 28rem;
+    }
+
+    #main {
+        width: 28rem;
+    }
+
+    .desc h1 {
+        font-size: 20px;
+        width: 30rem;
+    }
+
+    .desc h3 {
+        width: 50vh;
+    }
+
+    .pickup {
+        font-size: 0.9rem;
+        letter-spacing: 5px;
+        font-weight: 700;
+    }
+
+    .desc h3 {
+        width: 40vh;
+    }
+
+    .right-content a {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 375px) {
+    h2{
+        font-size: 0.8rem;
+    }
+
+    .image {
+        width: 20rem;
+    }
+
+    #main {
+        width: 20rem;
+    }
+
+    .desc h1 {
+        font-size: 16px;
+        width: 22rem;
+    }
+
+    .desc h3 {
+        width: 50vh;
+    }
+
+    .pickup {
+        font-size: 0.7rem;
+        letter-spacing: 5px;
+        font-weight: 700;
+    }
+
+    .right-content a {
+        width: 16rem;
+    }
+}
+
+
+/* .login {
+    position: absolute;
+    padding: 15px;
+    margin-left: 107rem;
+    margin-top: 15px;
+    font-size: x-large;
+    letter-spacing: 6px;
+    border: 2px solid #252525;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: 1.5s;
+}
+.login:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-shadow: 0 0 10px #55ACEE;
+} */
+/* .logo {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.bar {
+    display: flex;
+    justify-content: center;
+}
+.menu {
+    margin-top: 15px;
+    margin-left: 9%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 100px;
+    letter-spacing: 6px;
+}
+.menu li {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+li::after {
+    content: "";
+    position: absolute;
+    width: 95%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #55ACEE;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+} */
+/* @media screen and (max-height: 500px) {
+    .container {margin: auto; }
+    .container .image {margin: auto; }
+    .container .desc h1{ margin: auto;}
+} */

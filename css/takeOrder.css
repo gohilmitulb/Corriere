@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccd6dd;
+}
+
+.takeOrder_heading {
+    color: #55acee;
+    font-weight: 500;
+}
+
+.top li{
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+@media(min-width: 768px){
+    .top li{
+        font-size: 1.5rem;
+    }
+}
+

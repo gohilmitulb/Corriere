@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pop-message">
+        <div class="message-close">&times;</div>
+        <li>Welcome to Corriere. <br> Click here for any inquiries.</li>
+    </div>
+
+    <div class="logo-btn">
+        <img id="logo" src="img/LOGO copy.png" alt="">
+    </div>
+
+    <div class="chatbot-container">
+        <div class="background-logo-div">
+            <img class="background-logo" src="img/LOGO.png">
+        </div>
+        <div class="cross-btn">&times;</div>
+        <div class="chats">
+            <p class="bot-line"><span class="bot-logo-div"><img src="img/LOGO copy.png" alt=""></span></p>
+        </div>
+
+        <form id="user-input">
+            <div class="user-chat">
+                <input type="text" id="user-message" placeholder="Type your message here...">
+                <button class="send-message-btn" type="submit"><i class="material-icons">&#xe163;</i></button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+<script>
+    const message_close = document.querySelector('.message-close');
+    const pop_message = document.querySelector('.pop-message');
+    setInterval(() => {
+        pop_message.classList.add('pop-message-show');
+    }, 3000);
+    message_close.addEventListener('click', ()=>{
+        pop_message.style.display = 'none';
+    });
+    
+    const logo_click = document.querySelector('.logo-btn');
+    const chatbot_container = document.querySelector('.chatbot-container');
+    const close_chatbot = document.querySelector('.cross-btn');    
+
+    logo_click.addEventListener('click', () => {
+        setInterval(() => {
+        document.querySelector('.bot-line').innerHTML = '<span class="bot-logo-div"><img src="img/LOGO copy.png" alt=""></span>: Hi there, welcome to Corriere.';
+    }, 1200);
+
+        chatbot_container.classList.add('show-chatbot-container');
+        chatbot_container.classList.remove('chatbot-container');
+    });
+    close_chatbot.addEventListener('click', () => {
+        chatbot_container.classList.remove('show-chatbot-container');
+        chatbot_container.classList.add('chatbot-container');
+    });
+
+    const chatContainer = document.querySelector('.chats');
+
+    chatContainer.addEventListener('DOMSubtreeModified', function () {
+        if (chatContainer.scrollHeight > chatContainer.clientHeight) {
+            chatContainer.scrollTop = chatContainer.scrollHeight - chatContainer.clientHeight;
+        }
+    });
+
+    const form = document.querySelector('#user-input');
+    const chatbot = document.querySelector('.chats');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const userInput = document.querySelector('#user-message').value;
+        const message = document.createElement('p');
+        message.classList.add('user-p');
+        message.innerHTML = `<span class="user-text">${userInput}</span>`;
+        chatbot.appendChild(message);
+        document.querySelector('#user-message').value = '';
+        setTimeout(function () {
+            let response;
+            if (userInput.includes('hi') || userInput.includes('hello') || userInput.includes('good day') || userInput.includes('hey there') || userInput.includes('hey')) {
+                response = `<ul class="response">
+                    <li>Select below options according to your inquiry: </li>
+                    <li>1) General inquiries</li>
+                    <li>2) Shipping and Delivery</li>
+                    <li>3) Account management</li>
+                    <li>4) Special services</li>
+                    <li>5) Payment and Billing</li>
+                </ul>`;
+
+            } else if (userInput.includes('general inquiries') || userInput.includes('inquiries') || userInput.includes('questions') || userInput.includes('1')) {
+                response = `<ul class="general_inquiries">
+                    <li>Select below general inquires according to your inquiry:</li>
+                    <li>1.1) Estimated delivery time</li>
+                    <li>1.2) How can I track my package?</li>
+                    <li>1.3) Delivery service pricing</li>
+                    <li>1.4) Same-day delivery available?</li>
+                    <li>1.5) Package size/weight limit?</li>
+                </ul>`;
+
+            } else if (userInput.includes('shipping and delivery') || userInput.includes('delivery options') || userInput.includes('package delivery') || userInput.includes('2')) {
+                response = `<ul class="shipping_and_delivery">
+                    <li>Select below shipping and delivery options according to your inquiry:</li>
+                    <li>2.1) How to schedule a package pickup?</li>
+                    <li>2.2) What if I'm not home to receive my package?</li>
+                    <li>2.3) How to request proof of delivery or signature confirmation?</li>
+                    <li>2.4) What do I do if my package is lost or damaged in transit?</li>
+                </ul>`;
+
+            } else if (userInput.includes('account management') || userInput.includes('account') || userInput.includes('login') || userInput.includes('3')) {
+                response = `<ul class="account_management">
+                    <li>Select below account management options according to your inquiry:</li>
+                    <li>3.1) Account sign up process?</li>
+                    <li>3.2) Account access on multiple devices?</li>
+                    <li>3.3) Frequent user rewards program available?</li>
+                    <li>3.4) Customer support contact for account or delivery queries?</li>
+                </ul>`;
+
+            } else if (userInput.includes('special services') || userInput.includes('international delivery') || userInput.includes('servies') || userInput.includes('4')) {
+                response = `<ul class="special_service">
+                    <li>Select below special services options according to your inquiry:</li>
+                    <li>4.1) What are your special delivery options?</li>
+                    <li>4.2) International delivery available?</li>
+                </ul>`;
+
+            } else if (userInput.includes('payment and billing') || userInput.includes('billing') || userInput.includes('payment options') || userInput.includes('5')) {
+                response = `<ul class="payment_billing">
+                    <li>Select below payment and billing options according to your inquiry:</li>
+                    <li>5.1) Payment options for delivery?</li>
+                    <li>5.2) Delivery invoice/receipt available?</li>
+                    <li>5.3) How can I pay for my delivery services?</li>
+                </ul>`;
+
+            } else if (userInput.includes('Estimated delivery time') || userInput.includes('delivery time') || userInput.includes('1.1')) {
+                response = `<ul>
+                    <li style="list-style: none">The estimated delivery time depends on the delivery speed you select while entering your order details.</li><br/><br/>
+                <li>Same-Day Delivery</li>
+                <li>Next-Day Delivery</li>
+                <li>Standard Delivery (2-3 Days)</li>
+                <li>Rush delivery (delivery within 3 hours)</li>
+                </ul>`;
+            } else if (userInput.includes('How can I track my package?') || userInput.includes('How can I track my package') || userInput.includes('track package') || userInput.includes('1.2')) {
+                response = `On the home page, you can see 'TRACK ORDER' in the menu bar. By clicking on it, you will be redirected to the tracking page where you can track your package.`;
+            } else if (userInput.includes('Delivery service pricing') || userInput.includes('pricing') || userInput.includes('delivery pricing') || userInput.includes('1.3')) {
+                response = `
+                <ul>
+                    This are our pricing:<br/><br/>
+                    <li style="list-style: none">Same-Day Delivery</li>
+                    <li>Up to 2 kg: 40rs</li>
+                    <li>2 to 5 kg: 50rs</li>
+                    <li>5 to 10 kg: 60rs</li></br>
+                    <li style="list-style: none">Next-Day Delivery</li>
+                    <li>Up to 2 kg: 30rs</li>
+                    <li>2 to 5 kg: 40rs</li>
+                    <li>5 to 10 kg: 50rs</li></br>
+                    <li style="list-style: none">Standard Delivery (2-3 Days)</li>
+                    <li>Up to 2 kg: 30rs</li>
+                    <li>2 to 5 kg: 40rs</li>
+                    <li>5 to 10 kg: 50rs</li></br>
+                    <li style="list-style: none">Rush delivery (delivery within 3 hours)</li>
+                    <li>Up to 2 kg: 100rs</li>
+                    <li>2 to 5 kg: 125rs</li>
+                    <li>5 to 10 kg: 150rs</li>
+                </ul>   
+                `;
+            } else if (userInput.includes('Same-day delivery available?') || userInput.includes('Same day delivery') || userInput.includes('1.4')) {
+                response = `Yes, Same day delivery is available. You can select the Same-day delivery option while entering order details`;
+            } else if (userInput.includes('Package size/weight limit?') || userInput.includes('package size') || userInput.includes('weight limit') || userInput.includes('1.5')) {
+                response = `10kg, We allow user to deliver package upto 10kg.`;
+            } else if (userInput.includes('How to schedule a package pickup?') || userInput.includes('package pickup') || userInput.includes('schedule package pickup') || userInput.includes("2.1")) {
+                response = `On the home page, click on 'ADD PICKUP DETAILS' and enter your package pickup and drop details. Complete the payment procedure, and your package pickup will be scheduled.`;
+            } else if (userInput.includes(' What if I am not home to receive my package?') || userInput.includes('not home to receive package') || userInput.includes('not home') || userInput.includes('2.2')) {
+                response = `The delivery person will call you first. If you are not home, they will come to deliver the package at the time provided by you during the call.`;
+            } else if (userInput.includes('How to request proof of delivery or signature confirmation?') || userInput.includes('delivery confirmation') || userInput.includes('proof of delivery complete') || userInput.includes('2.3')) {
+                response = `After the delivery is completed, you will receive an email confirmation that the delivery was successful.`;
+            } else if (userInput.includes('What do I do if my package is lost or damaged in transit?') || userInput.includes('lost package in transit') || userInput.includes('damaged package in transit') || userInput.includes('2.4')) {
+                response = `Our customer service team will investigate the matter and provide you with the necessary support to locate your package or file a claim for compensation. Please provide us with the tracking details and any other relevant information about the package. Our team will work to resolve the issue and keep you updated on the progress. In case of damage, we may request pictures of the package and its contents to process the claim.
+We value your trust in our services and will do everything in our power to make things right for you.`;
+            } else if (userInput.includes('Account sign up process?') || userInput.includes('registration') || userInput.includes('signin process') || userInput.includes('create account') || userInput.includes('3.1')) {
+                response = `On the home page, you can see the 'login' button in the menu bar. By clicking on it, you can either log in to your account or create a new account by signing up.`;
+            } else if (userInput.includes('Account access on multiple devices?') || userInput.includes('multiple device support') || userInput.includes('multiple devices?') || userInput.includes('3.2')) {
+                response = `Yes, you can access your account on multiple devices.`;
+            } else if (userInput.includes('Frequent user rewards program available?') || userInput.includes('any rewards') || userInput.includes('rewards program') || userInput.includes('3.3')) {
+                response = `No, there is currently no reward program available for frequent users.`;
+            } else if (userInput.includes('Customer support contact for account or delivery queries?') || userInput.includes('customer support') || userInput.includes('3.4')) {
+                response = `For customer support, you can visit our CONTACT US page from the menu bar.`;
+            } else if (userInput.includes('What are your special delivery options?') || userInput.includes('any special delivery?') || userInput.includes('special delivery options') || userInput.includes('4.1')) {
+                response = `We provide a special service where users can deliver their packages to the train station, and we will deliver them to the intended recipient once they arrive at the railway station.`;
+            } else if (userInput.includes('International delivery available?') || userInput.includes('international') || userInput.includes('international delivery') || userInput.includes('4.2')) {
+                response = `No, there is currently no international delivery available.`;
+            } else if (userInput.includes('Payment options for delivery?') || userInput.includes('payment option') || userInput.includes('5.1')) {
+                response = `Various payment options are available, such as UPI, credit card, debit card, and cash on delivery.`;
+            } else if (userInput.includes('Delivery invoice/receipt available?') || userInput.includes('delivery invoice') || userInput.includes('delivery receipt') || userInput.includes('5.2')) {
+                response = `After checkout or payment completion, you will receive the delivery invoice/receipt via email.`;
+            } else if (userInput.includes('How can I pay for my delivery services?') || userInput.includes('how to pay delivery service') || userInput.includes('5.3')) {
+                response = `After entering the pickup and drop details, you will be redirected to the payment page where you can pay for the delivery service.`;
+            }
+            else {
+                response = `<ul class="response">
+                    <li>Sorry I didn't understand, select below options according to your inquiry: </li>
+                    <li>1) General inquiries</li>
+                    <li>2) Shipping and Delivery</li>
+                    <li>3) Account management</li>
+                    <li>4) Special services</li>
+                    <li>5) Payment and Billing</li>
+                </ul>`;
+            }
+
+            const botMessage = document.createElement('p');
+            botMessage.innerHTML = `<span class="bot-logo-div"><img src="img/LOGO copy.png" alt=""></span>: ${response}`;
+            chatbot.appendChild(botMessage);
+        }, 1000);
+    });
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .pop-message{
+        display: inline-flex;
+        background-color: #55ACEE;
+        border-radius: 0.7rem;
+        position: fixed;
+        bottom: 2rem;
+        right: -6rem;
+        box-shadow: 0 5px 10px #252525;
+        transform: scale(0);   
+    }
+
+    .pop-message-show{
+        position: fixed;
+        display: inline-flex;
+        background-color: #55ACEE;
+        border-radius: 0.7rem;
+        position: fixed;
+        bottom: 7rem;
+        right: 2rem;
+        box-shadow: 0 5px 10px #252525;
+        transform: scale(1);
+        transition: 0.8s;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    body.dark .pop-message{
+        box-shadow: 0 5px 10px #CCD6DD;
+    }
+
+    .pop-message li{
+        list-style: none;
+        padding: 1rem;
+        word-spacing: 0.2rem;
+        letter-spacing: 0.1rem;
+        font-size: 1.2rem;
+    }
+
+    body.dark .pop-message li{
+        color: #252525;
+    }
+
+    .message-close{
+        font-size: 2rem;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        right: 0.8rem;
+        color: #252525;
+        cursor: pointer;
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0.5rem;
+        background-color: #CCD6DD;
+        box-shadow: 0 5px 10px #55ACEE;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logo-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 9999;
+        transform: translateZ(0);
+    }
+
+    .logo-btn:hover #logo {
+        transform: scale(1.1);
+    }
+
+    .chatbot-container {
+        background-color: #CCD6DD;
+        height: 37rem;
+        width: 27rem;
+        position: fixed;
+        bottom: -15rem;
+        right: -10rem;
+        padding: 6px;
+        border-radius: 1rem;
+        box-shadow: 0 5px 10px #55ACEE;
+        transform: scale(10%);
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .show-chatbot-container {
+        background-color: #CCD6DD;
+        height: 37rem;
+        width: 27rem;
+        position: fixed;
+        bottom: 6.5rem;
+        right: 2rem;
+        padding: 6px;
+        border-radius: 1rem;
+        box-shadow: 0 5px 10px #55ACEE;
+        transform: scale(100%);
+        visibility: visible;
+        pointer-events: auto;
+        transition: 0.5s;
+    }
+
+    .background-logo-div {
+        position: absolute;
+        z-index: -9999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .background-logo {
+        opacity: 30%;
+    }
+
+    .cross-btn {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #55ACEE;
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+    .chats {
+        padding-top: 1rem;
+        height: 90%;
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .chats::-webkit-scrollbar {
+        width: 0;
+        /* hide scrollbar on webkit browsers */
+    }
+
+    .chats p {
+        display: flex;
+        gap: 0.3rem;
+        font-size: 1.4rem;
+        padding: 0.3rem;
+        z-index: 9999;
+        color: #252525;
+    }
+
+    body.dark .chats p{
+        color: #252525;
+    }
+
+    .chats img {
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .user-chat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.3rem;
+    }
+
+    .user-chat input {
+        width: 88%;
+        height: 3rem;
+        border-radius: 1.5rem;
+        border-color: #55acee;
+        background-color: #CCD6DD;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .user-chat input::placeholder {
+        padding: 0.8rem;
+    }
+
+    .send-message-btn {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .send-message-btn i {
+        font-size: 2.5rem;
+        padding-left: 0.3rem;
+        color: #55acee;
+    }
+
+    .user-p {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .user-text {
+        border: 2px solid #55acee;
+        background-color: #55ACEE;
+        border-radius: 2rem;
+        padding: 0.5rem;
+
+    }
+
+    .response,
+    .general_inquiries,
+    .shipping_and_delivery,
+    .account_management,
+    .special_service,
+    .payment_billing {
+        list-style: none;
+    }
+</style>
+
+</html>

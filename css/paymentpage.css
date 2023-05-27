@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #CCD6DD;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.logo img {
+  width: 18rem;
+}
+
+.heading {
+  display: inline-flex;
+  padding: 1rem;
+  margin-right: 3rem;
+}
+
+.heading h1 {
+  font-size: 2.4rem;
+  color: #55acee;
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  word-spacing: 2rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 98vw;
+  gap: 8rem;
+}
+
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.top li{
+  list-style: none;
+  font-size: 1.8rem;
+}
+
+.s_firstLine,
+.s_secondLine,
+.s_thirdLine,
+.r_firstLine,
+.r_secondLine,
+.r_thirdLine{
+  display: flex;
+  gap: 1.3rem;
+}
+
+.senderHeading,
+.recieverHeading{
+  color: #55ACEE;
+  padding-bottom: 0.5rem;
+}
+
+.address{
+  border: 1px solid #252525;
+  border-radius: 1rem;
+  border-spacing: 1rem;
+  padding: 1rem;
+}
+
+.addressarrow{
+  color: #55ACEE;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.down{
+  display: inline-flex;
+  gap: 20rem; 
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.checkout-heading{
+  text-transform: uppercase;
+  color: #55acee;
+  padding: 0 0 0.5rem 0;
+  letter-spacing: 0.4rem;
+  font-size: 1.8rem;
+}
+
+.table-container{
+  display: flex;
+  gap: 2rem;
+}
+
+.section-line{
+  border: 1px solid #252525;
+  border-radius: 1rem;
+  width: 100%;
+  border-spacing: 1rem;
+}
+
+.line{
+  border-spacing: 1rem;
+  display: flex;
+  gap: 15rem;
+  padding: 1rem;
+}
+
+.line td{
+  flex-grow: 1; 
+  font-size: 1.8rem;
+}
+
+#price,#gst,#round,#grand_total{
+  text-align: end;  
+}
+
+#grand_total_title{
+  font-weight: bold;
+}
+
+#grand_total{
+  font-weight: bold;
+  color: #55acee;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.deliveryby-line{
+  list-style: none;
+  letter-spacing: 0.1rem;
+  color: #55ACEE;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.arrow{
+  transform: rotate(270deg);
+  color: #55ACEE;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+#rzp-button1{
+  padding: 20px 30px;
+  color: #252525;
+  background-color: #CCD6DD;
+  cursor: pointer;
+  font-size: 1.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  border: 1px solid #55ACEE;
+  font-weight: bold;
+}
+
+#rzp-button1:hover{
+  background-color: #55ACEE;
+  color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+@media (max-width: 90em){
+  .heading h1{
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 85em){
+  .container{
+    height: auto;
+    margin-top: 3rem;
+  }
+  .top{
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .addressarrow3,
+  .addressarrow4{
+    display: none;
+  }
+  .addressarrow1,
+  .addressarrow2{
+    transform: rotate(90deg);
+  }
+  .down{
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .arrow3,
+  .arrow4{
+    display: none;
+  }
+}
+
+@media (max-width: 80em){
+  .heading h1{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 75em){
+  .container{
+    gap: 5rem;
+  }
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heading h1{
+    letter-spacing: 0.5rem;
+    word-spacing: 1rem;
+  }
+}
+
+@media (max-width: 40em){
+  .container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .senderHeading,
+  .recieverHeading{
+    font-size: 1.5rem;
+  }
+  .top li{
+    font-size: 1.3rem;
+  }
+  .checkout-heading{
+    font-size: 1.5rem;
+  }
+  .line td{
+    font-size: 1.3rem;
+  }
+  .line{
+    gap: 10rem;
+    border-spacing: 0.8rem;
+  }
+  .deliveryby-line{
+    font-size: 1.5rem;
+  }
+  #rzp-button1{
+    font-size: 1.5rem;
+  }
+}
+
